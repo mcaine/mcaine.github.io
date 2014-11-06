@@ -16,11 +16,10 @@
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
-    color: $dark-red;
 
     &,
     &:visited {
-        color: $grey-color-dark;
+        color: $dark-red
     }
 }
 
