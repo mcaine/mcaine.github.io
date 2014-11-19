@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>mcaine.github.io</title>
+    <title>Welcome to my World!</title>
     <meta name="description" content="Mike Caine's vanity site on github
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://mcaine.github.io/">		
+    <link rel="canonical" href="http://mcaine.github.io/jekyll/update/2014/11/06/welcome-to-my-blog.html">		
 		
 		<link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -71,10 +71,54 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <div class="post">
 
-  <h1 class="page-heading">Hello!</h1>
-	This is the Home Page but there's nothing here yet!
+  <header class="post-header">
+    <h1 class="post-title">Welcome to my World!</h1>
+    <p class="post-meta">Nov 6, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <p>Hello and welcome. If you are reading this, you must be bored indeed.</p>
+
+<p>Can I include scala code??</p>
+
+<div class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">object</span> <span class="nc">Tables</span> <span class="k">extends</span> <span class="nc">WithDefaultSession</span> <span class="o">{</span>
+
+  <span class="k">val</span> <span class="nc">Tokens</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">TableQuery</span><span class="o">[</span><span class="kt">Tokens</span><span class="o">](</span><span class="k">new</span> <span class="nc">Tokens</span><span class="o">(</span><span class="k">_</span><span class="o">))</span> <span class="o">{</span>
+
+    <span class="k">def</span> <span class="n">findById</span><span class="o">(</span><span class="n">tokenId</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Token</span><span class="o">]</span> <span class="k">=</span> <span class="n">withSession</span> <span class="o">{</span>
+      <span class="k">implicit</span> <span class="n">session</span> <span class="k">=&gt;</span>
+        <span class="k">val</span> <span class="n">q</span> <span class="k">=</span> <span class="k">for</span> <span class="o">{</span>
+          <span class="n">token</span> <span class="k">&lt;-</span> <span class="k">this</span>
+          <span class="k">if</span> <span class="n">token</span><span class="o">.</span><span class="n">uuid</span> <span class="n">is</span> <span class="n">tokenId</span>
+        <span class="o">}</span> <span class="k">yield</span> <span class="n">token</span>
+
+        <span class="n">q</span><span class="o">.</span><span class="n">firstOption</span>
+    <span class="o">}</span></code></pre></div>
+
+<p>What about this then?</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*}
+ %]]></script>
+
+
+  </article>
 
 </div>
 
